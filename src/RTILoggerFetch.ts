@@ -14,7 +14,6 @@ export class RTILoggerFetch implements IRTILogger {
   async log(level: 'audit' | 'error' | 'info' | 'warn', message: string, action?: string): Promise<void> {
     try {
       const options = {
-        keepalive: true,
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

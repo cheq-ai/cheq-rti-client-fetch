@@ -1,6 +1,6 @@
 import { IRTIService, RTIRequest, RTIResponse, getBody, Config } from 'cheq-rti-client-core-js';
 
-const rtiTimeout = 300;
+const rtiTimeout = 150;
 
 export class RTIServiceFetch implements IRTIService {
   public async callRTI(payload: RTIRequest, config: Config): Promise<RTIResponse> {
@@ -13,7 +13,6 @@ export class RTIServiceFetch implements IRTIService {
     });
     const url = 'https://rti-global.cheqzone.com/v1/realtime-interception';
     const options = {
-      keepalive: true,
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
